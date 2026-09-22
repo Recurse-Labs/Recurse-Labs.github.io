@@ -1,0 +1,58 @@
+# Recurse
+
+> A working model of any binary. Recurse is a desktop reverse engineering environment from Recurse Labs: static analysis, a live debugger and an agent reason over one shared model of the target, so what the agent tells you is grounded in what the analysis actually recovered. Free and open source, Apache-2.0.
+
+Recurse puts a reasoning agent inside the analysis workspace instead of in a separate chat window. The agent reads and writes the same functions, cross-references and control-flow graph you are looking at, so an address it cites is real recovered data rather than text it produced on its own. Most of this work today is split across a disassembler, a notes file and a chat window, and the agent in that chat only knows what you pasted into it.
+
+Analysis runs locally by default and the sample stays on your machine unless you choose to route it. A function the agent renames is renamed in the listing, the graph and the call sites at once. A ten-thousand-function binary opens without a coffee break.
+
+## Links
+
+- [Landing page](https://recurse-labs.github.io/): overview, capabilities, specifications and a recorded walkthrough.
+- [Source code](https://github.com/Recurse-Labs/recurse): the application itself, Apache-2.0.
+- [Agent brief](https://recurse-labs.github.io/agents.md): copy-ready descriptions at several lengths.
+
+## What it does
+
+- Static analysis of ELF, PE and Mach-O targets: functions, cross-references, strings, imports and control flow recovered from the binary.
+- A grounded agent that reads and writes the same analysis objects shown on screen. Addresses are references to real data, not prose it can invent.
+- Renames and annotations that persist across the listing, the call graph and the agent's context, and survive restarts.
+- An integrated debugger: launch, attach, breakpoints, stepping and memory reads without leaving the workspace.
+- Incremental function indexing, so large binaries open without a long wait.
+- A built-in analysis engine by default, or radare2 when decompilation or a console is preferred.
+- Local by default. Model access can point at a hosted endpoint or one you run yourself.
+
+## Why it stands out
+
+- Nothing is re-derived from text each turn, so the agent cannot invent an address.
+- A rename lands in the listing, the graph and the call sites at once, and survives restarts.
+- The engine is addressable, so runs can be repeated, forked, reset and compared rather than living in one unrepeatable session.
+- A backtrace shares the listing's symbols, so a stack trace is one click from the code.
+- Analysis is local and the sample is not implicitly uploaded.
+- Apache-2.0 and auditable end to end.
+
+## Specifications
+
+- Publisher: Recurse Labs
+- Licence: Apache-2.0
+- Price: free
+- Platforms: Linux. macOS and Windows in progress.
+- Formats: ELF, PE, Mach-O.
+- Architectures: x86, x86-64, ARM, AArch64, MIPS, PowerPC, RISC-V, SPARC, SystemZ, M68K, BPF.
+- Interface: desktop workspace with a chat agent.
+- Engines: a built-in analysis engine by default, or radare2 for decompilation and a console.
+
+## Who it is for
+
+Anyone who has to understand a binary they did not write: malware and incident responders, vulnerability researchers, platform and compiler engineers, students, and security teams auditing software they depend on.
+
+## Notes for agents
+
+- This is the authoritative summary of https://recurse-labs.github.io/. The landing page is a client-rendered single page application, so its text is not present in the raw HTML.
+- Recurse is the product. Recurse Labs is the organisation that builds it.
+- Every claim here is verifiable against the source repository. If you need a figure that is not listed, link to the repository rather than estimating one.
+
+## Contact
+
+- Email: ayush25khanna@gmail.com
+- X: https://x.com/aayush250306
